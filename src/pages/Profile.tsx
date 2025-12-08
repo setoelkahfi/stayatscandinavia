@@ -56,19 +56,19 @@ function ProfilePage() {
 
   const contactInfo = [
     {
-      icon: <Mail className="text-nordic-blue" size={20} />,
+      icon: <Mail className="text-sas-red" size={20} />,
       label: "Email",
       value: "stay@scandinavia.id",
       link: "mailto:stay@scandinavia.id",
     },
     {
-      icon: <Phone className="text-nordic-blue" size={20} />,
+      icon: <Phone className="text-sas-red" size={20} />,
       label: "Phone",
       value: "+62 812 3456 7890",
       link: "tel:+6281234567890",
     },
     {
-      icon: <MapPin className="text-nordic-blue" size={20} />,
+      icon: <MapPin className="text-sas-red" size={20} />,
       label: "Address",
       value: "Tangerang City Mall, Tangerang, Indonesia",
       link: "https://maps.google.com/?q=Tangerang+City+Mall",
@@ -77,22 +77,22 @@ function ProfilePage() {
 
   const bookingInfo = [
     {
-      icon: <Clock className="text-nordic-blue" size={20} />,
+      icon: <Clock className="text-sas-red" size={20} />,
       title: "Check-in/Check-out",
       value: "3:00 PM / 12:00 PM",
     },
     {
-      icon: <Users className="text-nordic-blue" size={20} />,
+      icon: <Users className="text-sas-red" size={20} />,
       title: "Maximum Guests",
       value: "4 adults",
     },
     {
-      icon: <DollarSign className="text-nordic-blue" size={20} />,
+      icon: <DollarSign className="text-sas-red" size={20} />,
       title: "Minimum Stay",
       value: "2 nights",
     },
     {
-      icon: <Home className="text-nordic-blue" size={20} />,
+      icon: <Home className="text-sas-red" size={20} />,
       title: "Property Type",
       value: "Entire Apartment",
     },
@@ -110,11 +110,11 @@ function ProfilePage() {
   return (
     <div className="space-y-6 pb-safe-bottom">
       {/* Header */}
-      <div className="bg-nordic-gradient text-white p-6 -mx-4 -mt-4 rounded-b-3xl shadow-lg">
+      <div className="bg-sas-gradient text-white p-6 -mx-4 -mt-4 rounded-b-3xl shadow-lg">
         <div className="max-w-2xl mx-auto text-center">
           <MessageSquare className="mx-auto mb-3" size={40} />
           <h1 className="text-3xl font-bold mb-2 text-white">Contact & Booking</h1>
-          <p className="text-nordic-warm">
+          <p className="text-gray-100">
             Get in touch with us or make a reservation
           </p>
         </div>
@@ -127,23 +127,23 @@ function ProfilePage() {
             key={index}
             href={info.link}
             onClick={() => haptics.buttonPress()}
-            className="bg-white rounded-xl p-4 nordic-shadow hover:nordic-shadow-lg transition-all duration-300 flex items-center gap-4 active:scale-98"
+            className="bg-white rounded-xl p-4 sas-shadow hover:sas-shadow-lg transition-all duration-300 flex items-center gap-4 active:scale-98"
           >
-            <div className="flex-shrink-0 w-12 h-12 bg-nordic-light rounded-full flex items-center justify-center">
+            <div className="flex-shrink-0 w-12 h-12 bg-sas-light rounded-full flex items-center justify-center">
               {info.icon}
             </div>
             <div className="flex-1">
-              <p className="text-sm text-nordic-gray">{info.label}</p>
-              <p className="font-semibold text-nordic-dark">{info.value}</p>
+              <p className="text-sm text-sas-gray">{info.label}</p>
+              <p className="font-semibold text-sas-dark">{info.value}</p>
             </div>
           </a>
         ))}
       </div>
 
       {/* Booking Information */}
-      <div className="bg-white rounded-xl p-6 nordic-shadow-lg">
-        <h2 className="text-2xl font-bold text-nordic-dark mb-4 flex items-center gap-2">
-          <Calendar className="text-nordic-blue" size={24} />
+      <div className="bg-white rounded-xl p-6 sas-shadow-lg">
+        <h2 className="text-2xl font-bold text-sas-dark mb-4 flex items-center gap-2">
+          <Calendar className="text-sas-red" size={24} />
           Booking Information
         </h2>
         <div className="grid grid-cols-2 gap-4">
@@ -151,33 +151,33 @@ function ProfilePage() {
             <div key={index} className="space-y-1">
               <div className="flex items-center gap-2">
                 {info.icon}
-                <p className="text-sm text-nordic-gray">{info.title}</p>
+                <p className="text-sm text-sas-gray">{info.title}</p>
               </div>
-              <p className="font-semibold text-nordic-dark ml-7">{info.value}</p>
+              <p className="font-semibold text-sas-dark ml-7">{info.value}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Inquiry Form */}
-      <div className="bg-white rounded-xl p-6 nordic-shadow-lg">
-        <h2 className="text-2xl font-bold text-nordic-dark mb-4 flex items-center gap-2">
-          <Send className="text-nordic-blue" size={24} />
+      <div className="bg-white rounded-xl p-6 sas-shadow-lg">
+        <h2 className="text-2xl font-bold text-sas-dark mb-4 flex items-center gap-2">
+          <Send className="text-sas-red" size={24} />
           Send Inquiry
         </h2>
         
         {isSubmitted ? (
           <div className="text-center py-8 space-y-3">
             <CheckCircle className="mx-auto text-green-500" size={64} />
-            <h3 className="text-xl font-bold text-nordic-dark">Thank You!</h3>
-            <p className="text-nordic-gray">
+            <h3 className="text-xl font-bold text-sas-dark">Thank You!</h3>
+            <p className="text-sas-gray">
               Your inquiry has been received. We'll get back to you within 24 hours.
             </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-nordic-dark mb-2">
+              <label className="block text-sm font-medium text-sas-dark mb-2">
                 <User className="inline mr-2" size={16} />
                 Full Name *
               </label>
@@ -187,13 +187,13 @@ function ProfilePage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-nordic-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-nordic-blue text-nordic-dark placeholder-nordic-gray"
+                className="w-full px-4 py-3 bg-sas-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-sas-red text-sas-dark placeholder-sas-gray"
                 placeholder="John Doe"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-nordic-dark mb-2">
+              <label className="block text-sm font-medium text-sas-dark mb-2">
                 <Mail className="inline mr-2" size={16} />
                 Email *
               </label>
@@ -203,13 +203,13 @@ function ProfilePage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-nordic-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-nordic-blue text-nordic-dark placeholder-nordic-gray"
+                className="w-full px-4 py-3 bg-sas-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-sas-red text-sas-dark placeholder-sas-gray"
                 placeholder="john@example.com"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-nordic-dark mb-2">
+              <label className="block text-sm font-medium text-sas-dark mb-2">
                 <Phone className="inline mr-2" size={16} />
                 Phone Number
               </label>
@@ -218,14 +218,14 @@ function ProfilePage() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-nordic-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-nordic-blue text-nordic-dark placeholder-nordic-gray"
+                className="w-full px-4 py-3 bg-sas-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-sas-red text-sas-dark placeholder-sas-gray"
                 placeholder="+62 812 3456 7890"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-nordic-dark mb-2">
+                <label className="block text-sm font-medium text-sas-dark mb-2">
                   Check-in
                 </label>
                 <input
@@ -233,11 +233,11 @@ function ProfilePage() {
                   name="checkIn"
                   value={formData.checkIn}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-nordic-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-nordic-blue text-nordic-dark"
+                  className="w-full px-4 py-3 bg-sas-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-sas-red text-sas-dark"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-nordic-dark mb-2">
+                <label className="block text-sm font-medium text-sas-dark mb-2">
                   Check-out
                 </label>
                 <input
@@ -245,13 +245,13 @@ function ProfilePage() {
                   name="checkOut"
                   value={formData.checkOut}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-nordic-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-nordic-blue text-nordic-dark"
+                  className="w-full px-4 py-3 bg-sas-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-sas-red text-sas-dark"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-nordic-dark mb-2">
+              <label className="block text-sm font-medium text-sas-dark mb-2">
                 <Users className="inline mr-2" size={16} />
                 Number of Guests
               </label>
@@ -259,7 +259,7 @@ function ProfilePage() {
                 name="guests"
                 value={formData.guests}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-nordic-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-nordic-blue text-nordic-dark"
+                className="w-full px-4 py-3 bg-sas-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-sas-red text-sas-dark"
               >
                 <option value="1">1 Guest</option>
                 <option value="2">2 Guests</option>
@@ -269,7 +269,7 @@ function ProfilePage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-nordic-dark mb-2">
+              <label className="block text-sm font-medium text-sas-dark mb-2">
                 <MessageSquare className="inline mr-2" size={16} />
                 Message
               </label>
@@ -278,7 +278,7 @@ function ProfilePage() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="w-full px-4 py-3 bg-nordic-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-nordic-blue text-nordic-dark placeholder-nordic-gray resize-none"
+                className="w-full px-4 py-3 bg-sas-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-sas-red text-sas-dark placeholder-sas-gray resize-none"
                 placeholder="Any special requests or questions?"
               />
             </div>
@@ -286,7 +286,7 @@ function ProfilePage() {
             <button
               type="submit"
               onClick={() => haptics.buttonPress()}
-              className="w-full px-6 py-4 bg-nordic-gradient text-white font-bold rounded-lg hover:opacity-90 transition-all transform active:scale-98 shadow-lg"
+              className="w-full px-6 py-4 bg-sas-gradient text-white font-bold rounded-lg hover:opacity-90 transition-all transform active:scale-98 shadow-lg"
             >
               <Send className="inline mr-2" size={20} />
               Send Inquiry
@@ -296,24 +296,24 @@ function ProfilePage() {
       </div>
 
       {/* House Rules */}
-      <div className="bg-white rounded-xl p-6 nordic-shadow-lg">
-        <h2 className="text-2xl font-bold text-nordic-dark mb-4">House Rules</h2>
+      <div className="bg-white rounded-xl p-6 sas-shadow-lg">
+        <h2 className="text-2xl font-bold text-sas-dark mb-4">House Rules</h2>
         <div className="space-y-2">
           {policies.map((policy, index) => (
             <div key={index} className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-5 h-5 bg-nordic-blue/20 rounded-full flex items-center justify-center mt-0.5">
-                <div className="w-2 h-2 bg-nordic-blue rounded-full"></div>
+              <div className="flex-shrink-0 w-5 h-5 bg-sas-red/20 rounded-full flex items-center justify-center mt-0.5">
+                <div className="w-2 h-2 bg-sas-red rounded-full"></div>
               </div>
-              <p className="text-nordic-dark/80 text-sm">{policy}</p>
+              <p className="text-sas-dark/80 text-sm">{policy}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Social Media */}
-      <div className="bg-gradient-to-br from-nordic-warm/20 to-nordic-light rounded-xl p-6 border border-nordic-gray/20">
-        <h2 className="text-2xl font-bold text-nordic-dark mb-4 text-center">Follow Us</h2>
-        <p className="text-center text-nordic-gray mb-6">
+      <div className="bg-gradient-to-br from-gray-100/20 to-sas-light rounded-xl p-6 border border-sas-gray/20">
+        <h2 className="text-2xl font-bold text-sas-dark mb-4 text-center">Follow Us</h2>
+        <p className="text-center text-sas-gray mb-6">
           Stay updated with our latest offers and news
         </p>
         <div className="flex justify-center gap-4">
@@ -322,28 +322,28 @@ function ProfilePage() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => haptics.buttonPress()}
-            className="flex items-center gap-2 px-6 py-3 bg-white rounded-full nordic-shadow hover:nordic-shadow-lg transition-all transform hover:scale-105"
+            className="flex items-center gap-2 px-6 py-3 bg-white rounded-full sas-shadow hover:sas-shadow-lg transition-all transform hover:scale-105"
           >
             <Facebook className="text-blue-600" size={24} />
-            <span className="font-semibold text-nordic-dark">Facebook</span>
+            <span className="font-semibold text-sas-dark">Facebook</span>
           </a>
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => haptics.buttonPress()}
-            className="flex items-center gap-2 px-6 py-3 bg-white rounded-full nordic-shadow hover:nordic-shadow-lg transition-all transform hover:scale-105"
+            className="flex items-center gap-2 px-6 py-3 bg-white rounded-full sas-shadow hover:sas-shadow-lg transition-all transform hover:scale-105"
           >
             <Instagram className="text-pink-600" size={24} />
-            <span className="font-semibold text-nordic-dark">Instagram</span>
+            <span className="font-semibold text-sas-dark">Instagram</span>
           </a>
         </div>
       </div>
 
       {/* Book Direct CTA */}
-      <div className="bg-nordic-gradient rounded-xl p-8 text-center text-white shadow-xl">
+      <div className="bg-sas-gradient rounded-xl p-8 text-center text-white shadow-xl">
         <h3 className="text-2xl font-bold mb-3 text-white">Book Direct & Save</h3>
-        <p className="text-nordic-warm mb-6">
+        <p className="text-gray-100 mb-6">
           Get the best rates and exclusive perks when you book directly with us.
         </p>
         <button
@@ -351,7 +351,7 @@ function ProfilePage() {
             await haptics.buttonPress();
             window.open("https://stayatscandinavia.5mb.app/", "_blank");
           }}
-          className="px-8 py-3 bg-white text-nordic-blue font-bold rounded-full hover:bg-nordic-light transition-all transform hover:scale-105 shadow-lg"
+          className="px-8 py-3 bg-white text-sas-red font-bold rounded-full hover:bg-sas-light transition-all transform hover:scale-105 shadow-lg"
         >
           <Calendar className="inline mr-2" size={20} />
           Book Now
@@ -359,7 +359,7 @@ function ProfilePage() {
       </div>
 
       {/* Footer */}
-      <div className="text-center text-sm text-nordic-gray space-y-2 pb-4">
+      <div className="text-center text-sm text-sas-gray space-y-2 pb-4">
         <p>© 2025 Stay at Scandinavia. All rights reserved.</p>
         <p className="text-xs">stayatscandinavia.5mb.app</p>
       </div>

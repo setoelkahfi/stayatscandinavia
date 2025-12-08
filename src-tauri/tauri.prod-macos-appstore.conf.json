@@ -15,7 +15,7 @@
       "entitlements": "./Entitlements-appstore.plist",
       "signingIdentity": "D865610A9D550A397A90E07EB476118EDC48F829",
       "files": {
-        "embedded.provisionprofile": ""
+        "embedded.provisionprofile": "/Users/setoelkahfi/Repositories/apple-certificates/SplitFire AB/tenants/Stay_at_Scandinavia_Mas_Provisioning_Profile.provisionprofile"
       }
     }
   }

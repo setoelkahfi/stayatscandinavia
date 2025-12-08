@@ -32,73 +32,73 @@ function WhatsForPage() {
 
   const amenities: Amenity[] = [
     {
-      icon: <Wifi className="text-nordic-blue" size={28} />,
+      icon: <Wifi className="text-sas-red" size={28} />,
       title: "High-Speed WiFi",
       description: "Complimentary fiber optic internet throughout the apartment",
       category: "essential",
     },
     {
-      icon: <Wind className="text-nordic-blue" size={28} />,
+      icon: <Wind className="text-sas-red" size={28} />,
       title: "Air Conditioning",
       description: "Climate control in all rooms for your comfort",
       category: "essential",
     },
     {
-      icon: <Tv className="text-nordic-blue" size={28} />,
+      icon: <Tv className="text-sas-red" size={28} />,
       title: "Smart TV",
       description: "55-inch 4K Smart TV with streaming services",
       category: "comfort",
     },
     {
-      icon: <Coffee className="text-nordic-blue" size={28} />,
+      icon: <Coffee className="text-sas-red" size={28} />,
       title: "Coffee & Tea",
       description: "Premium coffee maker with complimentary coffee and tea",
       category: "comfort",
     },
     {
-      icon: <Utensils className="text-nordic-blue" size={28} />,
+      icon: <Utensils className="text-sas-red" size={28} />,
       title: "Full Kitchen",
       description: "Modern kitchen with all appliances and cookware",
       category: "essential",
     },
     {
-      icon: <Bath className="text-nordic-blue" size={28} />,
+      icon: <Bath className="text-sas-red" size={28} />,
       title: "Premium Bathroom",
       description: "Rain shower, premium toiletries, and fluffy towels",
       category: "comfort",
     },
     {
-      icon: <Bed className="text-nordic-blue" size={28} />,
+      icon: <Bed className="text-sas-red" size={28} />,
       title: "Luxury Bedding",
       description: "King-size bed with premium linens and pillows",
       category: "comfort",
     },
     {
-      icon: <Car className="text-nordic-blue" size={28} />,
+      icon: <Car className="text-sas-red" size={28} />,
       title: "Parking",
       description: "Dedicated parking space in secure garage",
       category: "facility",
     },
     {
-      icon: <Shield className="text-nordic-blue" size={28} />,
+      icon: <Shield className="text-sas-red" size={28} />,
       title: "24/7 Security",
       description: "Round-the-clock security and CCTV surveillance",
       category: "facility",
     },
     {
-      icon: <Dumbbell className="text-nordic-blue" size={28} />,
+      icon: <Dumbbell className="text-sas-red" size={28} />,
       title: "Fitness Center",
       description: "Access to mall's modern gym and fitness facilities",
       category: "facility",
     },
     {
-      icon: <Users className="text-nordic-blue" size={28} />,
+      icon: <Users className="text-sas-red" size={28} />,
       title: "Swimming Pool",
       description: "Rooftop pool with stunning city views",
       category: "facility",
     },
     {
-      icon: <Building2 className="text-nordic-blue" size={28} />,
+      icon: <Building2 className="text-sas-red" size={28} />,
       title: "Mall Access",
       description: "Direct access to shopping, dining, and entertainment",
       category: "facility",
@@ -156,11 +156,11 @@ function WhatsForPage() {
   return (
     <div className="space-y-8 pb-safe-bottom">
       {/* Header */}
-      <div className="bg-nordic-gradient text-white p-6 -mx-4 -mt-4 rounded-b-3xl shadow-lg">
+      <div className="bg-sas-gradient text-white p-6 -mx-4 -mt-4 rounded-b-3xl shadow-lg">
         <div className="max-w-2xl mx-auto text-center">
           <Sparkles className="mx-auto mb-3" size={40} />
           <h1 className="text-3xl font-bold mb-2 text-white">Amenities & Features</h1>
-          <p className="text-nordic-warm">
+          <p className="text-gray-100">
             Everything you need for a comfortable and memorable stay
           </p>
         </div>
@@ -168,7 +168,7 @@ function WhatsForPage() {
 
       {/* Category Filters */}
       <div className="space-y-3">
-        <h3 className="text-sm font-semibold text-nordic-dark">Filter by Category</h3>
+        <h3 className="text-sm font-semibold text-sas-dark">Filter by Category</h3>
         <div className="flex flex-wrap gap-2">
           {categories.map((category) => (
             <button
@@ -176,8 +176,8 @@ function WhatsForPage() {
               onClick={() => handleCategoryChange(category.id)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 transform hover:scale-105 flex items-center gap-2 ${
                 selectedCategory === category.id
-                  ? "bg-nordic-gradient text-white shadow-lg"
-                  : "bg-white text-nordic-dark hover:bg-nordic-light nordic-shadow"
+                  ? "bg-sas-gradient text-white shadow-lg"
+                  : "bg-white text-sas-dark hover:bg-sas-light sas-shadow"
               }`}
             >
               {category.icon}
@@ -188,7 +188,7 @@ function WhatsForPage() {
       </div>
 
       {/* Results Count */}
-      <div className="text-center text-sm text-nordic-gray font-medium">
+      <div className="text-center text-sm text-sas-gray font-medium">
         Showing {filteredAmenities.length} {filteredAmenities.length === 1 ? "amenity" : "amenities"}
       </div>
 
@@ -197,21 +197,21 @@ function WhatsForPage() {
         {filteredAmenities.map((amenity, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl p-5 nordic-shadow hover:nordic-shadow-lg transition-all duration-300 fade-in animate-in"
+            className="bg-white rounded-xl p-5 sas-shadow hover:sas-shadow-lg transition-all duration-300 fade-in animate-in"
             style={{
               animationDelay: `${index * 50}ms`,
               animationFillMode: "both",
             }}
           >
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-14 h-14 bg-nordic-light rounded-full flex items-center justify-center">
+              <div className="flex-shrink-0 w-14 h-14 bg-sas-light rounded-full flex items-center justify-center">
                 {amenity.icon}
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-lg text-nordic-dark mb-1">
+                <h3 className="font-bold text-lg text-sas-dark mb-1">
                   {amenity.title}
                 </h3>
-                <p className="text-nordic-dark/70 text-sm leading-relaxed">
+                <p className="text-sas-dark/70 text-sm leading-relaxed">
                   {amenity.description}
                 </p>
               </div>
@@ -222,12 +222,12 @@ function WhatsForPage() {
       </div>
 
       {/* Nordic Design Features */}
-      <div className="bg-white rounded-xl p-6 nordic-shadow-lg">
+      <div className="bg-white rounded-xl p-6 sas-shadow-lg">
         <div className="flex items-center gap-2 mb-4">
-          <Home className="text-nordic-blue" size={24} />
-          <h2 className="text-2xl font-bold text-nordic-dark">Nordic Design</h2>
+          <Home className="text-sas-red" size={24} />
+          <h2 className="text-2xl font-bold text-sas-dark">Nordic Design</h2>
         </div>
-        <p className="text-nordic-dark/80 leading-relaxed mb-4">
+        <p className="text-sas-dark/80 leading-relaxed mb-4">
           Our apartment showcases authentic Scandinavian design principles, 
           combining functionality with aesthetic beauty.
         </p>
@@ -235,34 +235,34 @@ function WhatsForPage() {
           {designFeatures.map((feature, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 bg-nordic-light/50 rounded-lg px-3 py-2"
+              className="flex items-center gap-2 bg-sas-light/50 rounded-lg px-3 py-2"
             >
-              <div className="w-2 h-2 bg-nordic-blue rounded-full flex-shrink-0"></div>
-              <span className="text-sm text-nordic-dark">{feature}</span>
+              <div className="w-2 h-2 bg-sas-red rounded-full flex-shrink-0"></div>
+              <span className="text-sm text-sas-dark">{feature}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Hygge Section */}
-      <div className="bg-gradient-to-br from-nordic-warm/20 to-nordic-light rounded-xl p-6 border border-nordic-gray/20">
+      <div className="bg-gradient-to-br from-gray-100/20 to-sas-light rounded-xl p-6 border border-sas-gray/20">
         <div className="flex items-center gap-2 mb-3">
-          <Sparkles className="text-nordic-blue" size={24} />
-          <h2 className="text-2xl font-bold text-nordic-dark">Hygge Experience</h2>
+          <Sparkles className="text-sas-red" size={24} />
+          <h2 className="text-2xl font-bold text-sas-dark">Hygge Experience</h2>
         </div>
-        <p className="text-nordic-dark/80 leading-relaxed mb-5">
+        <p className="text-sas-dark/80 leading-relaxed mb-5">
           Experience the Danish concept of 'hygge' - a quality of coziness and comfortable 
           conviviality that engenders a feeling of contentment and well-being.
         </p>
         <div className="grid grid-cols-1 gap-4">
           {hyggeElements.map((element, index) => (
             <div key={index} className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-nordic-blue/20 rounded-full flex items-center justify-center mt-1">
-                <Coffee className="text-nordic-blue" size={16} />
+              <div className="flex-shrink-0 w-8 h-8 bg-sas-red/20 rounded-full flex items-center justify-center mt-1">
+                <Coffee className="text-sas-red" size={16} />
               </div>
               <div>
-                <h4 className="font-semibold text-nordic-dark mb-1">{element.title}</h4>
-                <p className="text-sm text-nordic-dark/70">{element.description}</p>
+                <h4 className="font-semibold text-sas-dark mb-1">{element.title}</h4>
+                <p className="text-sm text-sas-dark/70">{element.description}</p>
               </div>
             </div>
           ))}
@@ -270,12 +270,12 @@ function WhatsForPage() {
       </div>
 
       {/* Location Benefits */}
-      <div className="bg-white rounded-xl p-6 nordic-shadow-lg">
+      <div className="bg-white rounded-xl p-6 sas-shadow-lg">
         <div className="flex items-center gap-2 mb-4">
-          <MapPin className="text-nordic-blue" size={24} />
-          <h2 className="text-2xl font-bold text-nordic-dark">Prime Location</h2>
+          <MapPin className="text-sas-red" size={24} />
+          <h2 className="text-2xl font-bold text-sas-dark">Prime Location</h2>
         </div>
-        <p className="text-nordic-dark/80 leading-relaxed mb-4">
+        <p className="text-sas-dark/80 leading-relaxed mb-4">
           Located in Tangerang City Mall, you'll enjoy:
         </p>
         <div className="space-y-3">
@@ -291,16 +291,16 @@ function WhatsForPage() {
               <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
                 <Check className="text-green-600" size={16} />
               </div>
-              <span className="text-nordic-dark/80">{benefit}</span>
+              <span className="text-sas-dark/80">{benefit}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Call to Action */}
-      <div className="bg-nordic-gradient rounded-xl p-8 text-center text-white shadow-xl">
+      <div className="bg-sas-gradient rounded-xl p-8 text-center text-white shadow-xl">
         <h3 className="text-2xl font-bold mb-3 text-white">Ready to Experience Scandinavia?</h3>
-        <p className="text-nordic-warm mb-6">
+        <p className="text-gray-100 mb-6">
           Book your stay and immerse yourself in Nordic comfort and style.
         </p>
         <button
@@ -308,7 +308,7 @@ function WhatsForPage() {
             await haptics.buttonPress();
             window.open("https://stayatscandinavia.5mb.app/", "_blank");
           }}
-          className="px-8 py-3 bg-white text-nordic-blue font-bold rounded-full hover:bg-nordic-light transition-all transform hover:scale-105 shadow-lg"
+          className="px-8 py-3 bg-white text-sas-red font-bold rounded-full hover:bg-sas-light transition-all transform hover:scale-105 shadow-lg"
         >
           Check Availability
         </button>
