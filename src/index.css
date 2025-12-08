@@ -34,10 +34,10 @@
     padding-bottom: calc(1rem + env(safe-area-inset-bottom));
 }
 
-/* Nordic Gradient Background */
+/* SAS Gradient Background */
 @layer base {
     body {
-        background: linear-gradient(135deg, #ECF0F1 0%, #F8F9FA 100%);
+        background: linear-gradient(135deg, #F3F4F6 0%, #FFFFFF 100%);
         background-attachment: fixed;
     }
 }
@@ -102,9 +102,9 @@
         animation: shimmer 2s infinite;
         background: linear-gradient(
             90deg,
-            rgba(74, 144, 164, 0.1) 0%,
-            rgba(74, 144, 164, 0.3) 50%,
-            rgba(74, 144, 164, 0.1) 100%
+            rgba(204, 0, 0, 0.1) 0%,
+            rgba(204, 0, 0, 0.3) 50%,
+            rgba(204, 0, 0, 0.1) 100%
         );
         background-size: 200% 100%;
     }
@@ -119,15 +119,15 @@
     }
 
     .glow {
-        box-shadow: 0 0 20px rgba(74, 144, 164, 0.4);
+        box-shadow: 0 0 20px rgba(204, 0, 0, 0.4);
     }
 
-    .nordic-shadow {
-        box-shadow: 0 4px 6px -1px rgba(44, 62, 80, 0.1), 0 2px 4px -1px rgba(44, 62, 80, 0.06);
+    .sas-shadow {
+        box-shadow: 0 4px 6px -1px rgba(26, 26, 26, 0.1), 0 2px 4px -1px rgba(26, 26, 26, 0.06);
     }
 
-    .nordic-shadow-lg {
-        box-shadow: 0 10px 15px -3px rgba(44, 62, 80, 0.1), 0 4px 6px -2px rgba(44, 62, 80, 0.05);
+    .sas-shadow-lg {
+        box-shadow: 0 10px 15px -3px rgba(26, 26, 26, 0.1), 0 4px 6px -2px rgba(26, 26, 26, 0.05);
     }
 }
 
@@ -142,16 +142,16 @@
     height: 100%;
 }
 
-/* Scandinavian Typography */
+/* SAS Typography */
 @layer base {
     h1, h2, h3, h4, h5, h6 {
         font-weight: 600;
-        color: #2C3E50;
+        color: #1A1A1A;
         letter-spacing: -0.02em;
     }
     
     p {
         line-height: 1.7;
-        color: #34495E;
+        color: #4B5563;
     }
 }
