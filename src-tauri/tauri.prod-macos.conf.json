@@ -1,0 +1,18 @@
+{
+  "productName": "Stay at Scandinavia",
+  "identifier": "xyz.smbcloud.Stay",
+  "version": "1.0.0",
+  "app": {
+    "windows": [
+      {
+        "title": "Stay at Scandinavia"
+      }
+    ]
+  },
+  "bundle": {
+    "icon": ["icons/icon.icns"],
+    "macOS": {
+      "entitlements": "./Entitlements.plist"
+    }
+  }
+}

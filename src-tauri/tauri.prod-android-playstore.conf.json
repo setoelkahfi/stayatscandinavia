@@ -1,0 +1,11 @@
+{
+  "productName": "Stay at Scandinavia",
+  "identifier": "xyz.smbcloud.Stay",
+  "version": "1.0.0",
+  "bundle": {
+    "android": {
+      "minSdkVersion": 24,
+      "versionCode": 1
+    }
+  }
+}
