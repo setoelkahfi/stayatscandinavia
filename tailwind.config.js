@@ -4,22 +4,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        "nordic-blue": "#4A90A4",
-        "nordic-dark": "#2C3E50",
-        "nordic-light": "#ECF0F1",
-        "nordic-gray": "#95A5A6",
-        "nordic-white": "#F8F9FA",
-        "nordic-accent": "#3498DB",
-        "nordic-warm": "#E8DCC4",
+        "sas-red": "#CC0000",
+        "sas-red-dark": "#A00000",
+        "sas-red-light": "#E63939",
+        "sas-dark": "#1A1A1A",
+        "sas-gray": "#6B7280",
+        "sas-light": "#F3F4F6",
+        "sas-white": "#FFFFFF",
+        "sas-accent": "#CC0000",
       },
       backgroundImage: {
-        "nordic-gradient": "linear-gradient(135deg, #4A90A4 0%, #2C3E50 100%)",
-        "nordic-gradient-horizontal":
-          "linear-gradient(90deg, #4A90A4 0%, #2C3E50 100%)",
-        "nordic-gradient-vertical":
-          "linear-gradient(180deg, #4A90A4 0%, #2C3E50 100%)",
-        "nordic-gradient-light":
-          "linear-gradient(135deg, #ECF0F1 0%, #F8F9FA 100%)",
+        "sas-gradient": "linear-gradient(135deg, #CC0000 0%, #1A1A1A 100%)",
+        "sas-gradient-horizontal":
+          "linear-gradient(90deg, #CC0000 0%, #1A1A1A 100%)",
+        "sas-gradient-vertical":
+          "linear-gradient(180deg, #CC0000 0%, #1A1A1A 100%)",
+        "sas-gradient-light":
+          "linear-gradient(135deg, #F3F4F6 0%, #FFFFFF 100%)",
       },
     },
   },

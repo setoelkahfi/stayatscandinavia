@@ -10,22 +10,22 @@ function HomePage() {
 
   const features = [
     {
-      icon: <MapPin className="text-nordic-blue" size={24} />,
+      icon: <MapPin className="text-sas-red" size={24} />,
       title: "Premium Location",
       description: "Located in Tangerang City Mall with easy access to shopping, dining, and entertainment",
     },
     {
-      icon: <HomeIcon className="text-nordic-blue" size={24} />,
+      icon: <HomeIcon className="text-sas-red" size={24} />,
       title: "Nordic Design",
       description: "Authentic Scandinavian furniture and décor focusing on comfort and minimalist elegance",
     },
     {
-      icon: <Wifi className="text-nordic-blue" size={24} />,
+      icon: <Wifi className="text-sas-red" size={24} />,
       title: "Modern Amenities",
       description: "High-speed WiFi, smart home features, and all modern conveniences for a comfortable stay",
     },
     {
-      icon: <Coffee className="text-nordic-blue" size={24} />,
+      icon: <Coffee className="text-sas-red" size={24} />,
       title: "Hygge Experience",
       description: "Experience the Danish concept of 'hygge' - creating a warm atmosphere and enjoying life",
     },
@@ -61,18 +61,18 @@ function HomePage() {
     <div className="space-y-8 pb-safe-bottom">
       {/* Hero Section */}
       <div className="relative -mx-4 -mt-4 mb-8">
-        <div className="bg-nordic-gradient text-white p-8 rounded-b-3xl shadow-lg">
+        <div className="bg-sas-gradient text-white p-8 rounded-b-3xl shadow-lg">
           <div className="max-w-2xl mx-auto text-center space-y-4">
             <h1 className="text-4xl font-bold text-white mb-2">
               Stay at Scandinavia
             </h1>
-            <p className="text-lg text-nordic-warm">
+            <p className="text-lg text-gray-100">
               Experience authentic Scandinavian living in the heart of Indonesia
             </p>
             <div className="flex flex-wrap justify-center gap-3 pt-4">
               <button
                 onClick={handleBookNow}
-                className="px-6 py-3 bg-white text-nordic-blue font-semibold rounded-full hover:bg-nordic-light transition-all transform hover:scale-105 shadow-lg"
+                className="px-6 py-3 bg-white text-sas-red font-semibold rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
               >
                 <Calendar className="inline mr-2" size={20} />
                 Book Now
@@ -82,7 +82,7 @@ function HomePage() {
                   haptics.selection();
                   document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="px-6 py-3 bg-nordic-dark/30 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-nordic-dark/40 transition-all"
+                className="px-6 py-3 bg-black/30 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-black/40 transition-all"
               >
                 View Gallery
               </button>
@@ -93,25 +93,25 @@ function HomePage() {
 
       {/* Quick Info Cards */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white rounded-xl p-4 nordic-shadow text-center">
-          <Users className="mx-auto mb-2 text-nordic-blue" size={28} />
-          <p className="text-sm text-nordic-gray">Capacity</p>
-          <p className="font-bold text-nordic-dark">2-4 Guests</p>
+        <div className="bg-white rounded-xl p-4 sas-shadow text-center">
+          <Users className="mx-auto mb-2 text-sas-red" size={28} />
+          <p className="text-sm text-sas-gray">Capacity</p>
+          <p className="font-bold text-sas-dark">2-4 Guests</p>
         </div>
-        <div className="bg-white rounded-xl p-4 nordic-shadow text-center">
-          <MapPin className="mx-auto mb-2 text-nordic-blue" size={28} />
-          <p className="text-sm text-nordic-gray">Location</p>
-          <p className="font-bold text-nordic-dark">Tangerang</p>
+        <div className="bg-white rounded-xl p-4 sas-shadow text-center">
+          <MapPin className="mx-auto mb-2 text-sas-red" size={28} />
+          <p className="text-sm text-sas-gray">Location</p>
+          <p className="font-bold text-sas-dark">Tangerang</p>
         </div>
       </div>
 
       {/* Scandinavian Experience Section */}
-      <div className="bg-white rounded-xl p-6 nordic-shadow-lg">
+      <div className="bg-white rounded-xl p-6 sas-shadow-lg">
         <div className="flex items-center gap-2 mb-4">
-          <Sparkles className="text-nordic-blue" size={24} />
-          <h2 className="text-2xl font-bold text-nordic-dark">Scandinavian Experience</h2>
+          <Sparkles className="text-sas-red" size={24} />
+          <h2 className="text-2xl font-bold text-sas-dark">Scandinavian Experience</h2>
         </div>
-        <p className="text-nordic-dark/80 leading-relaxed mb-4">
+        <p className="text-sas-dark/80 leading-relaxed mb-4">
           Our apartment combines the clean lines and functionality of Scandinavian design 
           with the warmth and hospitality of Indonesia.
         </p>
@@ -119,10 +119,10 @@ function HomePage() {
           {amenities.map((amenity, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 bg-nordic-light/50 rounded-lg px-3 py-2"
+              className="flex items-center gap-2 bg-sas-light/50 rounded-lg px-3 py-2"
             >
-              <div className="w-2 h-2 bg-nordic-blue rounded-full"></div>
-              <span className="text-sm text-nordic-dark">{amenity}</span>
+              <div className="w-2 h-2 bg-sas-red rounded-full"></div>
+              <span className="text-sm text-sas-dark">{amenity}</span>
             </div>
           ))}
         </div>
@@ -130,28 +130,28 @@ function HomePage() {
 
       {/* Features Grid */}
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold text-nordic-dark text-center mb-6">
+        <h2 className="text-2xl font-bold text-sas-dark text-center mb-6">
           What We Offer
         </h2>
         <div className="grid grid-cols-1 gap-4">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 nordic-shadow hover:nordic-shadow-lg transition-all duration-300 fade-in animate-in"
+              className="bg-white rounded-xl p-6 sas-shadow hover:sas-shadow-lg transition-all duration-300 fade-in animate-in"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animationFillMode: "both",
               }}
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-nordic-light rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-sas-light rounded-full flex items-center justify-center">
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg text-nordic-dark mb-2">
+                  <h3 className="font-bold text-lg text-sas-dark mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-nordic-dark/70 text-sm leading-relaxed">
+                  <p className="text-sas-dark/70 text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -163,26 +163,26 @@ function HomePage() {
 
       {/* Guest Experiences */}
       <div className="space-y-4" id="gallery">
-        <h2 className="text-2xl font-bold text-nordic-dark text-center mb-6">
+        <h2 className="text-2xl font-bold text-sas-dark text-center mb-6">
           Guest Experiences
         </h2>
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl p-6 nordic-shadow-lg"
+            className="bg-white rounded-xl p-6 sas-shadow-lg"
           >
             <div className="flex items-center gap-1 mb-3">
               {[...Array(testimonial.rating)].map((_, i) => (
                 <Star key={i} className="text-yellow-400 fill-yellow-400" size={16} />
               ))}
             </div>
-            <p className="text-nordic-dark/80 leading-relaxed mb-4 italic">
+            <p className="text-sas-dark/80 leading-relaxed mb-4 italic">
               "{testimonial.text}"
             </p>
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-bold text-nordic-dark">{testimonial.name}</p>
-                <p className="text-sm text-nordic-gray">{testimonial.date}</p>
+                <p className="font-bold text-sas-dark">{testimonial.name}</p>
+                <p className="text-sm text-sas-gray">{testimonial.date}</p>
               </div>
             </div>
           </div>
@@ -190,16 +190,16 @@ function HomePage() {
       </div>
 
       {/* Call to Action */}
-      <div className="bg-nordic-gradient rounded-xl p-8 text-center text-white shadow-xl">
+      <div className="bg-sas-gradient rounded-xl p-8 text-center text-white shadow-xl">
         <h2 className="text-2xl font-bold mb-3">
           Experience Scandinavian Living
         </h2>
-        <p className="text-nordic-warm mb-6">
+        <p className="text-gray-100 mb-6">
           Our premium apartment at Tangerang City Mall offers a perfect blend of Nordic design and comfort.
         </p>
         <button
           onClick={handleBookNow}
-          className="px-8 py-3 bg-white text-nordic-blue font-bold rounded-full hover:bg-nordic-light transition-all transform hover:scale-105 shadow-lg"
+          className="px-8 py-3 bg-white text-sas-red font-bold rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
         >
           <Calendar className="inline mr-2" size={20} />
           Book Your Stay Now
@@ -207,7 +207,7 @@ function HomePage() {
       </div>
 
       {/* Footer Info */}
-      <div className="text-center text-sm text-nordic-gray space-y-2 pb-4">
+      <div className="text-center text-sm text-sas-gray space-y-2 pb-4">
         <p className="flex items-center justify-center gap-2">
           <MapPin size={16} />
           Tangerang City Mall, Tangerang, Indonesia
