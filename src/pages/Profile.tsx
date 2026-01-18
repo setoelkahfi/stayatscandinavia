@@ -1,21 +1,20 @@
 import { useState } from "react";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Calendar, 
-  MessageSquare, 
-  Facebook, 
-  Instagram, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  MessageSquare,
   Send,
   User,
   Users,
   Clock,
   DollarSign,
   Home,
-  CheckCircle
+  CheckCircle,
 } from "lucide-react";
 import { haptics } from "../utils/haptics";
+import SocialIcon from "../lib/icons";
 
 function ProfilePage() {
   const [formData, setFormData] = useState({
@@ -47,7 +46,11 @@ function ProfilePage() {
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -113,7 +116,9 @@ function ProfilePage() {
       <div className="bg-sas-gradient text-white p-6 -mx-4 -mt-4 rounded-b-3xl shadow-lg">
         <div className="max-w-2xl mx-auto text-center">
           <MessageSquare className="mx-auto mb-3" size={40} />
-          <h1 className="text-3xl font-bold mb-2 text-white">Contact & Booking</h1>
+          <h1 className="text-3xl font-bold mb-2 text-white">
+            Contact & Booking
+          </h1>
           <p className="text-gray-100">
             Get in touch with us or make a reservation
           </p>
@@ -165,13 +170,14 @@ function ProfilePage() {
           <Send className="text-sas-red" size={24} />
           Send Inquiry
         </h2>
-        
+
         {isSubmitted ? (
           <div className="text-center py-8 space-y-3">
             <CheckCircle className="mx-auto text-green-500" size={64} />
             <h3 className="text-xl font-bold text-sas-dark">Thank You!</h3>
             <p className="text-sas-gray">
-              Your inquiry has been received. We'll get back to you within 24 hours.
+              Your inquiry has been received. We'll get back to you within 24
+              hours.
             </p>
           </div>
         ) : (
@@ -312,37 +318,25 @@ function ProfilePage() {
 
       {/* Social Media */}
       <div className="bg-gradient-to-br from-gray-100/20 to-sas-light rounded-xl p-6 border border-sas-gray/20">
-        <h2 className="text-2xl font-bold text-sas-dark mb-4 text-center">Follow Us</h2>
+        <h2 className="text-2xl font-bold text-sas-dark mb-4 text-center">
+          Follow Us
+        </h2>
         <p className="text-center text-sas-gray mb-6">
           Stay updated with our latest offers and news
         </p>
         <div className="flex justify-center gap-4">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => haptics.buttonPress()}
-            className="flex items-center gap-2 px-6 py-3 bg-white rounded-full sas-shadow hover:sas-shadow-lg transition-all transform hover:scale-105"
-          >
-            <Facebook className="text-blue-600" size={24} />
-            <span className="font-semibold text-sas-dark">Facebook</span>
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => haptics.buttonPress()}
-            className="flex items-center gap-2 px-6 py-3 bg-white rounded-full sas-shadow hover:sas-shadow-lg transition-all transform hover:scale-105"
-          >
-            <Instagram className="text-pink-600" size={24} />
-            <span className="font-semibold text-sas-dark">Instagram</span>
-          </a>
+          <SocialIcon
+            href="https://www.youtube.com/@StayAtScandinavia"
+            kind="youtube"
+          />
         </div>
       </div>
 
       {/* Book Direct CTA */}
       <div className="bg-sas-gradient rounded-xl p-8 text-center text-white shadow-xl">
-        <h3 className="text-2xl font-bold mb-3 text-white">Book Direct & Save</h3>
+        <h3 className="text-2xl font-bold mb-3 text-white">
+          Book Direct & Save
+        </h3>
         <p className="text-gray-100 mb-6">
           Get the best rates and exclusive perks when you book directly with us.
         </p>
