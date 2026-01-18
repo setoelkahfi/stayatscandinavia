@@ -1,4 +1,4 @@
-name: "Release StayAtScandinavia App Desktop Windows"
+name: Release StayAtScandinavia App Desktop Windows
 
 on:
   push:

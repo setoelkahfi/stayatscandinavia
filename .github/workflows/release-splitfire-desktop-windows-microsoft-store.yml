@@ -1,4 +1,4 @@
-name: "Release StayAtScandinavia App Desktop Windows Microsoft Store"
+name: Release StayAtScandinavia App Desktop Windows Microsoft Store
 
 on:
   push:
