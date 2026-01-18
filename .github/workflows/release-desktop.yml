@@ -20,8 +20,6 @@ jobs:
             args: "--target x86_64-apple-darwin -c src-tauri/tauri.prod-macos.conf.json"
           - platform: "ubuntu-22.04"
             args: "-c src-tauri/tauri.prod-linux.conf.json"
-          - platform: "windows-latest"
-            args: "-c src-tauri/tauri.prod-windows.conf.json"
 
     runs-on: ${{ matrix.platform }}
     env:
@@ -42,7 +40,7 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: 1.90
+          toolchain: 1.92
           # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
           targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
