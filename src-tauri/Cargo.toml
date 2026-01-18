@@ -1,7 +1,7 @@
 [package]
 name = "stay"
 version = "1.0.0"
-description = "TutorialGitar App"
+description = "StayAtScandinavia App"
 authors = ["Seto Elkahfi <work@setoelkahfi.se>"]
 edition = "2021"
 
