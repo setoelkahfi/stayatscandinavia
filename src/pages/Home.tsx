@@ -10,13 +10,14 @@ import {
 } from "lucide-react";
 import { haptics } from "../utils/haptics";
 import { useLang } from "../context/LanguageContext";
+import { openUrl } from "@tauri-apps/plugin-opener";
 
 function HomePage() {
   const { t } = useLang();
 
   const handleBookNow = async () => {
     await haptics.buttonPress();
-    window.open("https://stayatscandinavia.5mb.app/", "_blank");
+    openUrl("https://wa.me/081363222197");
   };
 
   const features = [
