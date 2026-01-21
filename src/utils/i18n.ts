@@ -151,6 +151,155 @@ export interface Translation {
   facebook: string;
   instagram: string;
   logOut: string;
+
+  // Home Page
+  homeHeroTitle: string;
+  homeHeroSubtitle: string;
+  bookNow: string;
+  viewGallery: string;
+  capacity: string;
+  guests24: string;
+  location: string;
+  tangerang: string;
+  scandinavianExperience: string;
+  scandinavianExperienceDesc: string;
+  kingSizeBed: string;
+  fullKitchen: string;
+  smartTv: string;
+  airConditioning: string;
+  washingMachine: string;
+  security24: string;
+  parkingSpace: string;
+  swimmingPool: string;
+  premiumLocation: string;
+  premiumLocationDesc: string;
+  nordicDesign: string;
+  nordicDesignDesc: string;
+  modernAmenities: string;
+  modernAmenitiesDesc: string;
+  hyggeExperience: string;
+  hyggeExperienceDesc: string;
+  guestExperiences: string;
+  testimonial1Text: string;
+  testimonial1Name: string;
+  testimonial1Date: string;
+  testimonial2Text: string;
+  testimonial2Name: string;
+  testimonial2Date: string;
+  experienceScandinavianLiving: string;
+  experienceScandinavianLivingDesc: string;
+  bookYourStayNow: string;
+  footerAddress: string;
+  footerCopyright: string;
+
+  // Profile Page
+  contactAndBooking: string;
+  getInTouchDesc: string;
+  email: string;
+  phone: string;
+  address: string;
+  bookingInformation: string;
+  checkInOut: string;
+  checkInOutValue: string;
+  maximumGuests: string;
+  maximumGuestsValue: string;
+  minimumStay: string;
+  minimumStayValue: string;
+  propertyType: string;
+  propertyTypeValue: string;
+  sendInquiry: string;
+  thankYou: string;
+  inquiryReceived: string;
+  fullName: string;
+  phoneNumber: string;
+  checkIn: string;
+  checkOut: string;
+  numberOfGuests: string;
+  guest1: string;
+  guests2: string;
+  guests3: string;
+  guests4: string;
+  message: string;
+  messagePlaceholder: string;
+  sendInquiryButton: string;
+  houseRules: string;
+  noSmoking: string;
+  noPets: string;
+  partiesApproval: string;
+  quietHours: string;
+  respectNeighbors: string;
+  reportDamage: string;
+  followUs: string;
+  stayUpdated: string;
+  bookDirectSave: string;
+  bookDirectSaveDesc: string;
+
+  // WhatsFor Page (Amenities)
+  amenitiesAndFeatures: string;
+  amenitiesDesc: string;
+  filterByCategory: string;
+  allAmenities: string;
+  essential: string;
+  comfort: string;
+  facilities: string;
+  showingAmenities: string;
+  amenity: string;
+  amenities: string;
+  highSpeedWifi: string;
+  highSpeedWifiDesc: string;
+  airConditioningTitle: string;
+  airConditioningDesc: string;
+  smartTvTitle: string;
+  smartTvDesc: string;
+  coffeeTea: string;
+  coffeeTeaDesc: string;
+  fullKitchenTitle: string;
+  fullKitchenDesc: string;
+  premiumBathroom: string;
+  premiumBathroomDesc: string;
+  luxuryBedding: string;
+  luxuryBeddingDesc: string;
+  parking: string;
+  parkingDesc: string;
+  security24Title: string;
+  security24Desc: string;
+  fitnessCenter: string;
+  fitnessCenterDesc: string;
+  swimmingPoolTitle: string;
+  swimmingPoolDesc: string;
+  mallAccess: string;
+  mallAccessDesc: string;
+  nordicDesignTitle: string;
+  nordicDesignDescLong: string;
+  minimalistFurniture: string;
+  naturalWoodAccents: string;
+  neutralColorPalette: string;
+  abundantNaturalLight: string;
+  indoorPlants: string;
+  cozyTextiles: string;
+  functionalStorage: string;
+  qualityCraftsmanship: string;
+  hyggeExperienceTitle: string;
+  hyggeExperienceDescLong: string;
+  warmLighting: string;
+  warmLightingDesc: string;
+  comfortableSeating: string;
+  comfortableSeatingDesc: string;
+  naturalMaterials: string;
+  naturalMaterialsDesc: string;
+  peacefulEnvironment: string;
+  peacefulEnvironmentDesc: string;
+  primeLocation: string;
+  primeLocationDesc: string;
+  locationBenefit1: string;
+  locationBenefit2: string;
+  locationBenefit3: string;
+  locationBenefit4: string;
+  locationBenefit5: string;
+  locationBenefit6: string;
+  readyToExperience: string;
+  readyToExperienceDesc: string;
+  checkAvailability: string;
 }
 
 export type SupportedLanguage = "id" | "en";
@@ -326,12 +475,181 @@ export const translations: Record<SupportedLanguage, Translation> = {
     na: "N/A",
     bpm: "BPM",
     // ProfileLoggedIn
-    masterGuitarist: "Gitaris Master",
+    masterGuitarist: "Gitaris Ahli",
     tutorials: "Tutorial",
-    visitYoutubeChannel: "Kunjungi Channel YouTube",
+    visitYoutubeChannel: "Kunjungi Kanal YouTube",
     facebook: "Facebook",
     instagram: "Instagram",
     logOut: "Keluar",
+
+    // Home Page
+    homeHeroTitle: "Stay at Scandinavia",
+    homeHeroSubtitle:
+      "Rasakan kehidupan Skandinavia autentik di jantung Indonesia",
+    bookNow: "Pesan Sekarang",
+    viewGallery: "Lihat Galeri",
+    capacity: "Kapasitas",
+    guests24: "2-4 Tamu",
+    location: "Lokasi",
+    tangerang: "Tangerang",
+    scandinavianExperience: "Pengalaman Skandinavia",
+    scandinavianExperienceDesc:
+      "Apartemen kami memadukan garis bersih dan fungsionalitas desain Skandinavia dengan kehangatan dan keramahan Indonesia.",
+    kingSizeBed: "Tempat Tidur King Size",
+    fullKitchen: "Dapur Lengkap",
+    smartTv: "Smart TV",
+    airConditioning: "AC",
+    washingMachine: "Mesin Cuci",
+    security24: "Keamanan 24/7",
+    parkingSpace: "Tempat Parkir",
+    swimmingPool: "Kolam Renang",
+    premiumLocation: "Lokasi Premium",
+    premiumLocationDesc:
+      "Terletak di Tangerang City Mall dengan akses mudah ke pusat perbelanjaan, kuliner, dan hiburan",
+    nordicDesign: "Desain Nordic",
+    nordicDesignDesc:
+      "Furnitur dan dekorasi Skandinavia autentik yang fokus pada kenyamanan dan keanggunan minimalis",
+    modernAmenities: "Fasilitas Modern",
+    modernAmenitiesDesc:
+      "WiFi kecepatan tinggi, fitur smart home, dan semua kenyamanan modern untuk menginap yang nyaman",
+    hyggeExperience: "Pengalaman Hygge",
+    hyggeExperienceDesc:
+      "Rasakan konsep Denmark 'hygge' - menciptakan suasana hangat dan menikmati hidup",
+    guestExperiences: "Pengalaman Tamu",
+    testimonial1Text:
+      "Apartemen Stay at Scandinavia melebihi semua ekspektasi kami. Elemen desain Nordic menciptakan suasana yang sangat damai, dan lokasi di Tangerang City Mall sangat sempurna untuk kebutuhan kami.",
+    testimonial1Name: "Sarah Johnson",
+    testimonial1Date: "April 2023",
+    testimonial2Text:
+      "Kami menyukai desain minimalis dan perhatian terhadap detail. Apartemen memiliki semua yang kami butuhkan dan lebih. Perpaduan sempurna antara gaya dan kenyamanan.",
+    testimonial2Name: "David Lee",
+    testimonial2Date: "Juni 2023",
+    experienceScandinavianLiving: "Rasakan Kehidupan Skandinavia",
+    experienceScandinavianLivingDesc:
+      "Apartemen premium kami di Tangerang City Mall menawarkan perpaduan sempurna antara desain Nordic dan kenyamanan.",
+    bookYourStayNow: "Pesan Sekarang",
+    footerAddress: "Tangerang City Mall, Tangerang, Indonesia",
+    footerCopyright: "© 2025 Stay at Scandinavia. Hak cipta dilindungi.",
+
+    // Profile Page
+    contactAndBooking: "Kontak & Pemesanan",
+    getInTouchDesc: "Hubungi kami atau buat reservasi",
+    email: "Email",
+    phone: "Telepon",
+    address: "Alamat",
+    bookingInformation: "Informasi Pemesanan",
+    checkInOut: "Check-in/Check-out",
+    checkInOutValue: "15:00 / 12:00",
+    maximumGuests: "Maksimal Tamu",
+    maximumGuestsValue: "4 dewasa",
+    minimumStay: "Minimal Menginap",
+    minimumStayValue: "2 malam",
+    propertyType: "Tipe Properti",
+    propertyTypeValue: "Seluruh Apartemen",
+    sendInquiry: "Kirim Pertanyaan",
+    thankYou: "Terima Kasih!",
+    inquiryReceived:
+      "Pertanyaan Anda telah diterima. Kami akan menghubungi Anda dalam 24 jam.",
+    fullName: "Nama Lengkap",
+    phoneNumber: "Nomor Telepon",
+    checkIn: "Check-in",
+    checkOut: "Check-out",
+    numberOfGuests: "Jumlah Tamu",
+    guest1: "1 Tamu",
+    guests2: "2 Tamu",
+    guests3: "3 Tamu",
+    guests4: "4 Tamu",
+    message: "Pesan",
+    messagePlaceholder: "Ada permintaan khusus atau pertanyaan?",
+    sendInquiryButton: "Kirim Pertanyaan",
+    houseRules: "Aturan Rumah",
+    noSmoking: "Dilarang merokok di dalam apartemen",
+    noPets: "Hewan peliharaan tidak diperbolehkan",
+    partiesApproval: "Pesta dan acara memerlukan persetujuan sebelumnya",
+    quietHours: "Jam tenang: 22:00 - 07:00",
+    respectNeighbors: "Harap hormati tetangga",
+    reportDamage: "Laporkan kerusakan segera",
+    followUs: "Ikuti Kami",
+    stayUpdated: "Dapatkan info terbaru tentang penawaran dan berita kami",
+    bookDirectSave: "Pesan Langsung & Hemat",
+    bookDirectSaveDesc:
+      "Dapatkan harga terbaik dan keuntungan eksklusif saat Anda memesan langsung dengan kami.",
+
+    // WhatsFor Page (Amenities)
+    amenitiesAndFeatures: "Fasilitas & Fitur",
+    amenitiesDesc:
+      "Semua yang Anda butuhkan untuk menginap yang nyaman dan berkesan",
+    filterByCategory: "Filter berdasarkan Kategori",
+    allAmenities: "Semua Fasilitas",
+    essential: "Esensial",
+    comfort: "Kenyamanan",
+    facilities: "Fasilitas",
+    showingAmenities: "Menampilkan",
+    amenity: "fasilitas",
+    amenities: "fasilitas",
+    highSpeedWifi: "WiFi Kecepatan Tinggi",
+    highSpeedWifiDesc: "Internet fiber optik gratis di seluruh apartemen",
+    airConditioningTitle: "AC",
+    airConditioningDesc: "Pengatur suhu di semua ruangan untuk kenyamanan Anda",
+    smartTvTitle: "Smart TV",
+    smartTvDesc: "Smart TV 4K 55 inci dengan layanan streaming",
+    coffeeTea: "Kopi & Teh",
+    coffeeTeaDesc: "Mesin kopi premium dengan kopi dan teh gratis",
+    fullKitchenTitle: "Dapur Lengkap",
+    fullKitchenDesc: "Dapur modern dengan semua peralatan masak",
+    premiumBathroom: "Kamar Mandi Premium",
+    premiumBathroomDesc:
+      "Rain shower, perlengkapan mandi premium, dan handuk lembut",
+    luxuryBedding: "Tempat Tidur Mewah",
+    luxuryBeddingDesc:
+      "Tempat tidur king-size dengan seprai dan bantal premium",
+    parking: "Parkir",
+    parkingDesc: "Tempat parkir khusus di garasi aman",
+    security24Title: "Keamanan 24/7",
+    security24Desc: "Keamanan sepanjang waktu dan pengawasan CCTV",
+    fitnessCenter: "Pusat Kebugaran",
+    fitnessCenterDesc: "Akses ke gym modern dan fasilitas kebugaran mall",
+    swimmingPoolTitle: "Kolam Renang",
+    swimmingPoolDesc:
+      "Kolam renang rooftop dengan pemandangan kota yang menakjubkan",
+    mallAccess: "Akses Mall",
+    mallAccessDesc:
+      "Akses langsung ke pusat perbelanjaan, kuliner, dan hiburan",
+    nordicDesignTitle: "Desain Nordic",
+    nordicDesignDescLong:
+      "Apartemen kami menampilkan prinsip desain Skandinavia autentik, menggabungkan fungsionalitas dengan keindahan estetis.",
+    minimalistFurniture: "Furnitur Skandinavia minimalis",
+    naturalWoodAccents: "Aksen kayu alami",
+    neutralColorPalette: "Palet warna netral",
+    abundantNaturalLight: "Cahaya alami melimpah",
+    indoorPlants: "Tanaman dalam ruangan",
+    cozyTextiles: "Tekstil dan selimut nyaman",
+    functionalStorage: "Solusi penyimpanan fungsional",
+    qualityCraftsmanship: "Kerajinan berkualitas",
+    hyggeExperienceTitle: "Pengalaman Hygge",
+    hyggeExperienceDescLong:
+      "Rasakan konsep Denmark 'hygge' - kualitas kenyamanan dan keramahan yang menciptakan perasaan kepuasan dan kesejahteraan.",
+    warmLighting: "Pencahayaan Hangat",
+    warmLightingDesc:
+      "Pencahayaan lembut dan ambient menciptakan suasana nyaman",
+    comfortableSeating: "Tempat Duduk Nyaman",
+    comfortableSeatingDesc: "Sofa dan kursi empuk sempurna untuk relaksasi",
+    naturalMaterials: "Material Alami",
+    naturalMaterialsDesc: "Kayu, wol, dan katun untuk nuansa autentik",
+    peacefulEnvironment: "Lingkungan Damai",
+    peacefulEnvironmentDesc: "Ruang tenang dan damai jauh dari kebisingan kota",
+    primeLocation: "Lokasi Strategis",
+    primeLocationDesc: "Terletak di Tangerang City Mall, Anda akan menikmati:",
+    locationBenefit1: "Akses langsung ke 200+ toko dan butik",
+    locationBenefit2: "50+ pilihan kuliner dari kasual hingga fine dining",
+    locationBenefit3: "Bioskop dan tempat hiburan",
+    locationBenefit4: "Jarak berjalan kaki ke kawasan bisnis",
+    locationBenefit5: "Akses mudah ke transportasi umum",
+    locationBenefit6: "Lingkungan aman dan terjaga",
+    readyToExperience: "Siap Merasakan Skandinavia?",
+    readyToExperienceDesc:
+      "Pesan menginap Anda dan nikmati kenyamanan dan gaya Nordic.",
+    checkAvailability: "Cek Ketersediaan",
   },
   en: {
     appName: "🎸 Stay at Scandinavia",
@@ -504,6 +822,170 @@ export const translations: Record<SupportedLanguage, Translation> = {
     visitYoutubeChannel: "Visit YouTube Channel",
     facebook: "Facebook",
     instagram: "Instagram",
-    logOut: "Log out",
+    logOut: "Log Out",
+
+    // Home Page
+    homeHeroTitle: "Stay at Scandinavia",
+    homeHeroSubtitle:
+      "Experience authentic Scandinavian living in the heart of Indonesia",
+    bookNow: "Book Now",
+    viewGallery: "View Gallery",
+    capacity: "Capacity",
+    guests24: "2-4 Guests",
+    location: "Location",
+    tangerang: "Tangerang",
+    scandinavianExperience: "Scandinavian Experience",
+    scandinavianExperienceDesc:
+      "Our apartment combines the clean lines and functionality of Scandinavian design with the warmth and hospitality of Indonesia.",
+    kingSizeBed: "King Size Bed",
+    fullKitchen: "Full Kitchen",
+    smartTv: "Smart TV",
+    airConditioning: "Air Conditioning",
+    washingMachine: "Washing Machine",
+    security24: "24/7 Security",
+    parkingSpace: "Parking Space",
+    swimmingPool: "Swimming Pool",
+    premiumLocation: "Premium Location",
+    premiumLocationDesc:
+      "Located in Tangerang City Mall with easy access to shopping, dining, and entertainment",
+    nordicDesign: "Nordic Design",
+    nordicDesignDesc:
+      "Authentic Scandinavian furniture and décor focusing on comfort and minimalist elegance",
+    modernAmenities: "Modern Amenities",
+    modernAmenitiesDesc:
+      "High-speed WiFi, smart home features, and all modern conveniences for a comfortable stay",
+    hyggeExperience: "Hygge Experience",
+    hyggeExperienceDesc:
+      "Experience the Danish concept of 'hygge' - creating a warm atmosphere and enjoying life",
+    guestExperiences: "Guest Experiences",
+    testimonial1Text:
+      "The Stay at Scandinavia apartment exceeded all our expectations. The Nordic design elements created such a peaceful environment, and the location in Tangerang City Mall was perfect for our needs.",
+    testimonial1Name: "Sarah Johnson",
+    testimonial1Date: "April 2023",
+    testimonial2Text:
+      "We loved the minimalist design and the attention to detail. The apartment had everything we needed and more. It was the perfect blend of style and comfort.",
+    testimonial2Name: "David Lee",
+    testimonial2Date: "June 2023",
+    experienceScandinavianLiving: "Experience Scandinavian Living",
+    experienceScandinavianLivingDesc:
+      "Our premium apartment at Tangerang City Mall offers a perfect blend of Nordic design and comfort.",
+    bookYourStayNow: "Book Your Stay Now",
+    footerAddress: "Tangerang City Mall, Tangerang, Indonesia",
+    footerCopyright: "© 2025 Stay at Scandinavia. All rights reserved.",
+
+    // Profile Page
+    contactAndBooking: "Contact & Booking",
+    getInTouchDesc: "Get in touch with us or make a reservation",
+    email: "Email",
+    phone: "Phone",
+    address: "Address",
+    bookingInformation: "Booking Information",
+    checkInOut: "Check-in/Check-out",
+    checkInOutValue: "3:00 PM / 12:00 PM",
+    maximumGuests: "Maximum Guests",
+    maximumGuestsValue: "4 adults",
+    minimumStay: "Minimum Stay",
+    minimumStayValue: "2 nights",
+    propertyType: "Property Type",
+    propertyTypeValue: "Entire Apartment",
+    sendInquiry: "Send Inquiry",
+    thankYou: "Thank You!",
+    inquiryReceived:
+      "Your inquiry has been received. We'll get back to you within 24 hours.",
+    fullName: "Full Name",
+    phoneNumber: "Phone Number",
+    checkIn: "Check-in",
+    checkOut: "Check-out",
+    numberOfGuests: "Number of Guests",
+    guest1: "1 Guest",
+    guests2: "2 Guests",
+    guests3: "3 Guests",
+    guests4: "4 Guests",
+    message: "Message",
+    messagePlaceholder: "Any special requests or questions?",
+    sendInquiryButton: "Send Inquiry",
+    houseRules: "House Rules",
+    noSmoking: "No smoking inside the apartment",
+    noPets: "Pets are not allowed",
+    partiesApproval: "Parties and events require prior approval",
+    quietHours: "Quiet hours: 10 PM - 7 AM",
+    respectNeighbors: "Please respect the neighbors",
+    reportDamage: "Report any damage immediately",
+    followUs: "Follow Us",
+    stayUpdated: "Stay updated with our latest offers and news",
+    bookDirectSave: "Book Direct & Save",
+    bookDirectSaveDesc:
+      "Get the best rates and exclusive perks when you book directly with us.",
+
+    // WhatsFor Page (Amenities)
+    amenitiesAndFeatures: "Amenities & Features",
+    amenitiesDesc: "Everything you need for a comfortable and memorable stay",
+    filterByCategory: "Filter by Category",
+    allAmenities: "All Amenities",
+    essential: "Essential",
+    comfort: "Comfort",
+    facilities: "Facilities",
+    showingAmenities: "Showing",
+    amenity: "amenity",
+    amenities: "amenities",
+    highSpeedWifi: "High-Speed WiFi",
+    highSpeedWifiDesc:
+      "Complimentary fiber optic internet throughout the apartment",
+    airConditioningTitle: "Air Conditioning",
+    airConditioningDesc: "Climate control in all rooms for your comfort",
+    smartTvTitle: "Smart TV",
+    smartTvDesc: "55-inch 4K Smart TV with streaming services",
+    coffeeTea: "Coffee & Tea",
+    coffeeTeaDesc: "Premium coffee maker with complimentary coffee and tea",
+    fullKitchenTitle: "Full Kitchen",
+    fullKitchenDesc: "Modern kitchen with all appliances and cookware",
+    premiumBathroom: "Premium Bathroom",
+    premiumBathroomDesc: "Rain shower, premium toiletries, and fluffy towels",
+    luxuryBedding: "Luxury Bedding",
+    luxuryBeddingDesc: "King-size bed with premium linens and pillows",
+    parking: "Parking",
+    parkingDesc: "Dedicated parking space in secure garage",
+    security24Title: "24/7 Security",
+    security24Desc: "Round-the-clock security and CCTV surveillance",
+    fitnessCenter: "Fitness Center",
+    fitnessCenterDesc: "Access to mall's modern gym and fitness facilities",
+    swimmingPoolTitle: "Swimming Pool",
+    swimmingPoolDesc: "Rooftop pool with stunning city views",
+    mallAccess: "Mall Access",
+    mallAccessDesc: "Direct access to shopping, dining, and entertainment",
+    nordicDesignTitle: "Nordic Design",
+    nordicDesignDescLong:
+      "Our apartment showcases authentic Scandinavian design principles, combining functionality with aesthetic beauty.",
+    minimalistFurniture: "Minimalist Scandinavian furniture",
+    naturalWoodAccents: "Natural wood accents",
+    neutralColorPalette: "Neutral color palette",
+    abundantNaturalLight: "Abundant natural light",
+    indoorPlants: "Indoor plants",
+    cozyTextiles: "Cozy textiles and throws",
+    functionalStorage: "Functional storage solutions",
+    qualityCraftsmanship: "Quality craftsmanship",
+    hyggeExperienceTitle: "Hygge Experience",
+    hyggeExperienceDescLong:
+      "Experience the Danish concept of 'hygge' - a quality of coziness and comfortable conviviality that engenders a feeling of contentment and well-being.",
+    warmLighting: "Warm Lighting",
+    warmLightingDesc: "Soft, ambient lighting creates a cozy atmosphere",
+    comfortableSeating: "Comfortable Seating",
+    comfortableSeatingDesc: "Plush sofas and chairs perfect for relaxation",
+    naturalMaterials: "Natural Materials",
+    naturalMaterialsDesc: "Wood, wool, and cotton for an authentic feel",
+    peacefulEnvironment: "Peaceful Environment",
+    peacefulEnvironmentDesc: "Quiet, serene space away from city noise",
+    primeLocation: "Prime Location",
+    primeLocationDesc: "Located in Tangerang City Mall, you'll enjoy:",
+    locationBenefit1: "Direct access to 200+ shops and boutiques",
+    locationBenefit2: "50+ dining options from casual to fine dining",
+    locationBenefit3: "Cinema and entertainment venues",
+    locationBenefit4: "Walking distance to business district",
+    locationBenefit5: "Easy access to public transportation",
+    locationBenefit6: "Safe and secure neighborhood",
+    readyToExperience: "Ready to Experience Scandinavia?",
+    readyToExperienceDesc:
+      "Book your stay and immerse yourself in Nordic comfort and style.",
+    checkAvailability: "Check Availability",
   },
 };

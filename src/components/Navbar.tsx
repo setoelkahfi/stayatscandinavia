@@ -41,12 +41,12 @@ export default function Navbar() {
     <>
       {/* Top bar with app name */}
       <div className="fixed top-0 left-0 w-full bg-sas-gradient text-white shadow-lg z-50 top-nav-safe">
-        <div className="max-w-4xl mx-auto flex flex-row justify-center items-center px-4 py-4 w-full">
+        <div className="max-w-4xl mx-auto flex flex-row justify-between items-center px-4 py-4 w-full">
           <span className="text-2xl font-bold tracking-wide">
             Stay at Scandinavia
           </span>
           <select
-            className="ml-4 rounded-lg border border-white/30 px-3 py-1.5 bg-white/20 text-sm text-white cursor-pointer shadow-md hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="rounded-lg border border-white/30 px-3 py-1.5 bg-white/20 text-sm text-white cursor-pointer shadow-md hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
             value={lang}
             onClick={handleNavClick}
             onChange={(e) => setLang(e.target.value as SupportedLanguage)}
