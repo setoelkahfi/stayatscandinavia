@@ -15,8 +15,12 @@ import {
 } from "lucide-react";
 import { haptics } from "../utils/haptics";
 import SocialIcon from "../lib/icons";
+import { useLang } from "../context/LanguageContext";
+import { openUrl } from "@tauri-apps/plugin-opener";
 
 function ProfilePage() {
+  const { t } = useLang();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,6 +35,28 @@ function ProfilePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await haptics.success();
+
+    // Build WhatsApp message with form data
+    const whatsappNumber = "6281363222197";
+    const messageParts = [
+      `🏠 *New Booking Inquiry*`,
+      ``,
+      `👤 *Name:* ${formData.name}`,
+      `📧 *Email:* ${formData.email}`,
+      formData.phone ? `📞 *Phone:* ${formData.phone}` : null,
+      formData.checkIn ? `📅 *Check-in:* ${formData.checkIn}` : null,
+      formData.checkOut ? `📅 *Check-out:* ${formData.checkOut}` : null,
+      `👥 *Guests:* ${formData.guests}`,
+      formData.message ? `\n💬 *Message:*\n${formData.message}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const encodedMessage = encodeURIComponent(messageParts);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    await openUrl(whatsappUrl);
+
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
@@ -60,54 +86,54 @@ function ProfilePage() {
   const contactInfo = [
     {
       icon: <Mail className="text-sas-red" size={20} />,
-      label: "Email",
-      value: "stay@scandinavia.id",
-      link: "mailto:stay@scandinavia.id",
+      label: t.email,
+      value: "stay@stayatscandinavia.5mb.app",
+      link: "mailto:stay@stayatscandinavia.5mb.app",
     },
     {
       icon: <Phone className="text-sas-red" size={20} />,
-      label: "Phone",
-      value: "+62 812 3456 7890",
-      link: "tel:+6281234567890",
+      label: t.phone,
+      value: "+62 813-6322-2197",
+      link: "tel:+6281363222197",
     },
     {
       icon: <MapPin className="text-sas-red" size={20} />,
-      label: "Address",
-      value: "Tangerang City Mall, Tangerang, Indonesia",
-      link: "https://maps.google.com/?q=Tangerang+City+Mall",
+      label: t.address,
+      value: t.footerAddress,
+      link: "https://share.google/MmOauklWHgAF42M0p",
     },
   ];
 
   const bookingInfo = [
     {
       icon: <Clock className="text-sas-red" size={20} />,
-      title: "Check-in/Check-out",
-      value: "3:00 PM / 12:00 PM",
+      title: t.checkInOut,
+      value: t.checkInOutValue,
     },
     {
       icon: <Users className="text-sas-red" size={20} />,
-      title: "Maximum Guests",
-      value: "4 adults",
+      title: t.maximumGuests,
+      value: t.maximumGuestsValue,
     },
     {
       icon: <DollarSign className="text-sas-red" size={20} />,
-      title: "Minimum Stay",
-      value: "2 nights",
+      title: t.minimumStay,
+      value: t.minimumStayValue,
     },
     {
       icon: <Home className="text-sas-red" size={20} />,
-      title: "Property Type",
-      value: "Entire Apartment",
+      title: t.propertyType,
+      value: t.propertyTypeValue,
     },
   ];
 
   const policies = [
-    "No smoking inside the apartment",
-    "Pets are not allowed",
-    "Parties and events require prior approval",
-    "Quiet hours: 10 PM - 7 AM",
-    "Please respect the neighbors",
-    "Report any damage immediately",
+    t.noSmoking,
+    t.noPets,
+    t.partiesApproval,
+    t.quietHours,
+    t.respectNeighbors,
+    t.reportDamage,
   ];
 
   return (
@@ -117,11 +143,9 @@ function ProfilePage() {
         <div className="max-w-2xl mx-auto text-center">
           <MessageSquare className="mx-auto mb-3" size={40} />
           <h1 className="text-3xl font-bold mb-2 text-white">
-            Contact & Booking
+            {t.contactAndBooking}
           </h1>
-          <p className="text-gray-100">
-            Get in touch with us or make a reservation
-          </p>
+          <p className="text-gray-100">{t.getInTouchDesc}</p>
         </div>
       </div>
 
@@ -130,9 +154,11 @@ function ProfilePage() {
         {contactInfo.map((info, index) => (
           <a
             key={index}
-            href={info.link}
-            onClick={() => haptics.buttonPress()}
-            className="bg-white rounded-xl p-4 sas-shadow hover:sas-shadow-lg transition-all duration-300 flex items-center gap-4 active:scale-98"
+            onClick={() => {
+              haptics.buttonPress();
+              openUrl(info.link);
+            }}
+            className="bg-white rounded-xl p-4 sas-shadow hover:sas-shadow-lg transition-all duration-300 flex items-center gap-4 active:scale-98 cursor-pointer"
           >
             <div className="flex-shrink-0 w-12 h-12 bg-sas-light rounded-full flex items-center justify-center">
               {info.icon}
@@ -149,7 +175,7 @@ function ProfilePage() {
       <div className="bg-white rounded-xl p-6 sas-shadow-lg">
         <h2 className="text-2xl font-bold text-sas-dark mb-4 flex items-center gap-2">
           <Calendar className="text-sas-red" size={24} />
-          Booking Information
+          {t.bookingInformation}
         </h2>
         <div className="grid grid-cols-2 gap-4">
           {bookingInfo.map((info, index) => (
@@ -168,24 +194,21 @@ function ProfilePage() {
       <div className="bg-white rounded-xl p-6 sas-shadow-lg">
         <h2 className="text-2xl font-bold text-sas-dark mb-4 flex items-center gap-2">
           <Send className="text-sas-red" size={24} />
-          Send Inquiry
+          {t.sendInquiry}
         </h2>
 
         {isSubmitted ? (
           <div className="text-center py-8 space-y-3">
             <CheckCircle className="mx-auto text-green-500" size={64} />
-            <h3 className="text-xl font-bold text-sas-dark">Thank You!</h3>
-            <p className="text-sas-gray">
-              Your inquiry has been received. We'll get back to you within 24
-              hours.
-            </p>
+            <h3 className="text-xl font-bold text-sas-dark">{t.thankYou}</h3>
+            <p className="text-sas-gray">{t.inquiryReceived}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-sas-dark mb-2">
                 <User className="inline mr-2" size={16} />
-                Full Name *
+                {t.fullName} *
               </label>
               <input
                 type="text"
@@ -201,7 +224,7 @@ function ProfilePage() {
             <div>
               <label className="block text-sm font-medium text-sas-dark mb-2">
                 <Mail className="inline mr-2" size={16} />
-                Email *
+                {t.email} *
               </label>
               <input
                 type="email"
@@ -217,7 +240,7 @@ function ProfilePage() {
             <div>
               <label className="block text-sm font-medium text-sas-dark mb-2">
                 <Phone className="inline mr-2" size={16} />
-                Phone Number
+                {t.phoneNumber}
               </label>
               <input
                 type="tel"
@@ -232,7 +255,7 @@ function ProfilePage() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-sas-dark mb-2">
-                  Check-in
+                  {t.checkIn}
                 </label>
                 <input
                   type="date"
@@ -244,7 +267,7 @@ function ProfilePage() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-sas-dark mb-2">
-                  Check-out
+                  {t.checkOut}
                 </label>
                 <input
                   type="date"
@@ -259,7 +282,7 @@ function ProfilePage() {
             <div>
               <label className="block text-sm font-medium text-sas-dark mb-2">
                 <Users className="inline mr-2" size={16} />
-                Number of Guests
+                {t.numberOfGuests}
               </label>
               <select
                 name="guests"
@@ -267,17 +290,17 @@ function ProfilePage() {
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-sas-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-sas-red text-sas-dark"
               >
-                <option value="1">1 Guest</option>
-                <option value="2">2 Guests</option>
-                <option value="3">3 Guests</option>
-                <option value="4">4 Guests</option>
+                <option value="1">{t.guest1}</option>
+                <option value="2">{t.guests2}</option>
+                <option value="3">{t.guests3}</option>
+                <option value="4">{t.guests4}</option>
               </select>
             </div>
 
             <div>
               <label className="block text-sm font-medium text-sas-dark mb-2">
                 <MessageSquare className="inline mr-2" size={16} />
-                Message
+                {t.message}
               </label>
               <textarea
                 name="message"
@@ -285,7 +308,7 @@ function ProfilePage() {
                 onChange={handleChange}
                 rows={4}
                 className="w-full px-4 py-3 bg-sas-light/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-sas-red text-sas-dark placeholder-sas-gray resize-none"
-                placeholder="Any special requests or questions?"
+                placeholder={t.messagePlaceholder}
               />
             </div>
 
@@ -295,7 +318,7 @@ function ProfilePage() {
               className="w-full px-6 py-4 bg-sas-gradient text-white font-bold rounded-lg hover:opacity-90 transition-all transform active:scale-98 shadow-lg"
             >
               <Send className="inline mr-2" size={20} />
-              Send Inquiry
+              {t.sendInquiryButton}
             </button>
           </form>
         )}
@@ -303,7 +326,9 @@ function ProfilePage() {
 
       {/* House Rules */}
       <div className="bg-white rounded-xl p-6 sas-shadow-lg">
-        <h2 className="text-2xl font-bold text-sas-dark mb-4">House Rules</h2>
+        <h2 className="text-2xl font-bold text-sas-dark mb-4">
+          {t.houseRules}
+        </h2>
         <div className="space-y-2">
           {policies.map((policy, index) => (
             <div key={index} className="flex items-start gap-3">
@@ -319,11 +344,9 @@ function ProfilePage() {
       {/* Social Media */}
       <div className="bg-gradient-to-br from-gray-100/20 to-sas-light rounded-xl p-6 border border-sas-gray/20">
         <h2 className="text-2xl font-bold text-sas-dark mb-4 text-center">
-          Follow Us
+          {t.followUs}
         </h2>
-        <p className="text-center text-sas-gray mb-6">
-          Stay updated with our latest offers and news
-        </p>
+        <p className="text-center text-sas-gray mb-6">{t.stayUpdated}</p>
         <div className="flex justify-center gap-4">
           <SocialIcon
             href="https://www.youtube.com/@StayAtScandinavia"
@@ -335,26 +358,24 @@ function ProfilePage() {
       {/* Book Direct CTA */}
       <div className="bg-sas-gradient rounded-xl p-8 text-center text-white shadow-xl">
         <h3 className="text-2xl font-bold mb-3 text-white">
-          Book Direct & Save
+          {t.bookDirectSave}
         </h3>
-        <p className="text-gray-100 mb-6">
-          Get the best rates and exclusive perks when you book directly with us.
-        </p>
+        <p className="text-gray-100 mb-6">{t.bookDirectSaveDesc}</p>
         <button
           onClick={async () => {
             await haptics.buttonPress();
-            window.open("https://stayatscandinavia.5mb.app/", "_blank");
+            openUrl("https://wa.me/081363222197");
           }}
           className="px-8 py-3 bg-white text-sas-red font-bold rounded-full hover:bg-sas-light transition-all transform hover:scale-105 shadow-lg"
         >
           <Calendar className="inline mr-2" size={20} />
-          Book Now
+          {t.bookNow}
         </button>
       </div>
 
       {/* Footer */}
       <div className="text-center text-sm text-sas-gray space-y-2 pb-4">
-        <p>© 2025 Stay at Scandinavia. All rights reserved.</p>
+        <p>{t.footerCopyright}</p>
         <p className="text-xs">stayatscandinavia.5mb.app</p>
       </div>
     </div>

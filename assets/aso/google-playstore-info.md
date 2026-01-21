@@ -116,5 +116,5 @@ Following Scandinavian sustainability with energy-efficient appliances and eco-f
 
 Download Stay at Scandinavia now and book your Nordic escape in Indonesia!
 
-📧 Contact: stay@scandinavia.id
+📧 Contact: stay@stayatscandinavia.5mb.app
 🌐 Website: stayatscandinavia.5mb.app

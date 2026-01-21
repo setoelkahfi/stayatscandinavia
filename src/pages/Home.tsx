@@ -1,60 +1,72 @@
-import { Calendar, MapPin, Users, Wifi, Coffee, Sparkles, Star, Home as HomeIcon } from "lucide-react";
+import {
+  Calendar,
+  MapPin,
+  Users,
+  Wifi,
+  Coffee,
+  Sparkles,
+  Star,
+  Home as HomeIcon,
+} from "lucide-react";
 import { haptics } from "../utils/haptics";
+import { useLang } from "../context/LanguageContext";
+import { openUrl } from "@tauri-apps/plugin-opener";
 
 function HomePage() {
+  const { t } = useLang();
 
   const handleBookNow = async () => {
     await haptics.buttonPress();
-    window.open("https://stayatscandinavia.5mb.app/", "_blank");
+    openUrl("https://wa.me/081363222197");
   };
 
   const features = [
     {
       icon: <MapPin className="text-sas-red" size={24} />,
-      title: "Premium Location",
-      description: "Located in Tangerang City Mall with easy access to shopping, dining, and entertainment",
+      title: t.premiumLocation,
+      description: t.premiumLocationDesc,
     },
     {
       icon: <HomeIcon className="text-sas-red" size={24} />,
-      title: "Nordic Design",
-      description: "Authentic Scandinavian furniture and décor focusing on comfort and minimalist elegance",
+      title: t.nordicDesign,
+      description: t.nordicDesignDesc,
     },
     {
       icon: <Wifi className="text-sas-red" size={24} />,
-      title: "Modern Amenities",
-      description: "High-speed WiFi, smart home features, and all modern conveniences for a comfortable stay",
+      title: t.modernAmenities,
+      description: t.modernAmenitiesDesc,
     },
     {
       icon: <Coffee className="text-sas-red" size={24} />,
-      title: "Hygge Experience",
-      description: "Experience the Danish concept of 'hygge' - creating a warm atmosphere and enjoying life",
+      title: t.hyggeExperience,
+      description: t.hyggeExperienceDesc,
     },
   ];
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      date: "April 2023",
-      text: "The Stay at Scandinavia apartment exceeded all our expectations. The Nordic design elements created such a peaceful environment, and the location in Tangerang City Mall was perfect for our needs.",
+      name: t.testimonial1Name,
+      date: t.testimonial1Date,
+      text: t.testimonial1Text,
       rating: 5,
     },
     {
-      name: "David Lee",
-      date: "June 2023",
-      text: "We loved the minimalist design and the attention to detail. The apartment had everything we needed and more. It was the perfect blend of style and comfort.",
+      name: t.testimonial2Name,
+      date: t.testimonial2Date,
+      text: t.testimonial2Text,
       rating: 5,
     },
   ];
 
   const amenities = [
-    "King Size Bed",
-    "Full Kitchen",
-    "Smart TV",
-    "Air Conditioning",
-    "Washing Machine",
-    "24/7 Security",
-    "Parking Space",
-    "Swimming Pool",
+    t.kingSizeBed,
+    t.fullKitchen,
+    t.smartTv,
+    t.airConditioning,
+    t.washingMachine,
+    t.security24,
+    t.parkingSpace,
+    t.swimmingPool,
   ];
 
   return (
@@ -64,27 +76,27 @@ function HomePage() {
         <div className="bg-sas-gradient text-white p-8 rounded-b-3xl shadow-lg">
           <div className="max-w-2xl mx-auto text-center space-y-4">
             <h1 className="text-4xl font-bold text-white mb-2">
-              Stay at Scandinavia
+              {t.homeHeroTitle}
             </h1>
-            <p className="text-lg text-gray-100">
-              Experience authentic Scandinavian living in the heart of Indonesia
-            </p>
+            <p className="text-lg text-gray-100">{t.homeHeroSubtitle}</p>
             <div className="flex flex-wrap justify-center gap-3 pt-4">
               <button
                 onClick={handleBookNow}
                 className="px-6 py-3 bg-white text-sas-red font-semibold rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
               >
                 <Calendar className="inline mr-2" size={20} />
-                Book Now
+                {t.bookNow}
               </button>
               <button
                 onClick={() => {
                   haptics.selection();
-                  document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" });
+                  document
+                    .getElementById("gallery")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="px-6 py-3 bg-black/30 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-black/40 transition-all"
               >
-                View Gallery
+                {t.viewGallery}
               </button>
             </div>
           </div>
@@ -95,13 +107,13 @@ function HomePage() {
       <div className="grid grid-cols-2 gap-4">
         <div className="bg-white rounded-xl p-4 sas-shadow text-center">
           <Users className="mx-auto mb-2 text-sas-red" size={28} />
-          <p className="text-sm text-sas-gray">Capacity</p>
-          <p className="font-bold text-sas-dark">2-4 Guests</p>
+          <p className="text-sm text-sas-gray">{t.capacity}</p>
+          <p className="font-bold text-sas-dark">{t.guests24}</p>
         </div>
         <div className="bg-white rounded-xl p-4 sas-shadow text-center">
           <MapPin className="mx-auto mb-2 text-sas-red" size={28} />
-          <p className="text-sm text-sas-gray">Location</p>
-          <p className="font-bold text-sas-dark">Tangerang</p>
+          <p className="text-sm text-sas-gray">{t.location}</p>
+          <p className="font-bold text-sas-dark">{t.tangerang}</p>
         </div>
       </div>
 
@@ -109,11 +121,12 @@ function HomePage() {
       <div className="bg-white rounded-xl p-6 sas-shadow-lg">
         <div className="flex items-center gap-2 mb-4">
           <Sparkles className="text-sas-red" size={24} />
-          <h2 className="text-2xl font-bold text-sas-dark">Scandinavian Experience</h2>
+          <h2 className="text-2xl font-bold text-sas-dark">
+            {t.scandinavianExperience}
+          </h2>
         </div>
         <p className="text-sas-dark/80 leading-relaxed mb-4">
-          Our apartment combines the clean lines and functionality of Scandinavian design 
-          with the warmth and hospitality of Indonesia.
+          {t.scandinavianExperienceDesc}
         </p>
         <div className="grid grid-cols-2 gap-3">
           {amenities.map((amenity, index) => (
@@ -131,7 +144,7 @@ function HomePage() {
       {/* Features Grid */}
       <div className="space-y-4">
         <h2 className="text-2xl font-bold text-sas-dark text-center mb-6">
-          What We Offer
+          {t.whatWeOffer}
         </h2>
         <div className="grid grid-cols-1 gap-4">
           {features.map((feature, index) => (
@@ -164,16 +177,17 @@ function HomePage() {
       {/* Guest Experiences */}
       <div className="space-y-4" id="gallery">
         <h2 className="text-2xl font-bold text-sas-dark text-center mb-6">
-          Guest Experiences
+          {t.guestExperiences}
         </h2>
         {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl p-6 sas-shadow-lg"
-          >
+          <div key={index} className="bg-white rounded-xl p-6 sas-shadow-lg">
             <div className="flex items-center gap-1 mb-3">
               {[...Array(testimonial.rating)].map((_, i) => (
-                <Star key={i} className="text-yellow-400 fill-yellow-400" size={16} />
+                <Star
+                  key={i}
+                  className="text-yellow-400 fill-yellow-400"
+                  size={16}
+                />
               ))}
             </div>
             <p className="text-sas-dark/80 leading-relaxed mb-4 italic">
@@ -192,17 +206,17 @@ function HomePage() {
       {/* Call to Action */}
       <div className="bg-sas-gradient rounded-xl p-8 text-center text-white shadow-xl">
         <h2 className="text-2xl font-bold mb-3">
-          Experience Scandinavian Living
+          {t.experienceScandinavianLiving}
         </h2>
         <p className="text-gray-100 mb-6">
-          Our premium apartment at Tangerang City Mall offers a perfect blend of Nordic design and comfort.
+          {t.experienceScandinavianLivingDesc}
         </p>
         <button
           onClick={handleBookNow}
           className="px-8 py-3 bg-white text-sas-red font-bold rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
         >
           <Calendar className="inline mr-2" size={20} />
-          Book Your Stay Now
+          {t.bookYourStayNow}
         </button>
       </div>
 
@@ -210,9 +224,9 @@ function HomePage() {
       <div className="text-center text-sm text-sas-gray space-y-2 pb-4">
         <p className="flex items-center justify-center gap-2">
           <MapPin size={16} />
-          Tangerang City Mall, Tangerang, Indonesia
+          {t.footerAddress}
         </p>
-        <p>© 2025 Stay at Scandinavia. All rights reserved.</p>
+        <p>{t.footerCopyright}</p>
       </div>
     </div>
   );
