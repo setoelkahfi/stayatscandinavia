@@ -16,6 +16,7 @@ import {
 import { haptics } from "../utils/haptics";
 import SocialIcon from "../lib/icons";
 import { useLang } from "../context/LanguageContext";
+import { openUrl } from "@tauri-apps/plugin-opener";
 
 function ProfilePage() {
   const { t } = useLang();
@@ -34,6 +35,28 @@ function ProfilePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await haptics.success();
+
+    // Build WhatsApp message with form data
+    const whatsappNumber = "6281363222197";
+    const messageParts = [
+      `🏠 *New Booking Inquiry*`,
+      ``,
+      `👤 *Name:* ${formData.name}`,
+      `📧 *Email:* ${formData.email}`,
+      formData.phone ? `📞 *Phone:* ${formData.phone}` : null,
+      formData.checkIn ? `📅 *Check-in:* ${formData.checkIn}` : null,
+      formData.checkOut ? `📅 *Check-out:* ${formData.checkOut}` : null,
+      `👥 *Guests:* ${formData.guests}`,
+      formData.message ? `\n💬 *Message:*\n${formData.message}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const encodedMessage = encodeURIComponent(messageParts);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    await openUrl(whatsappUrl);
+
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
@@ -64,20 +87,20 @@ function ProfilePage() {
     {
       icon: <Mail className="text-sas-red" size={20} />,
       label: t.email,
-      value: "stay@scandinavia.id",
-      link: "mailto:stay@scandinavia.id",
+      value: "stay@stayatscandinavia.5mb.app",
+      link: "mailto:stay@stayatscandinavia.5mb.app",
     },
     {
       icon: <Phone className="text-sas-red" size={20} />,
       label: t.phone,
-      value: "+62 812 3456 7890",
-      link: "tel:+6281234567890",
+      value: "+62 813-6322-2197",
+      link: "tel:+6281363222197",
     },
     {
       icon: <MapPin className="text-sas-red" size={20} />,
       label: t.address,
       value: t.footerAddress,
-      link: "https://maps.google.com/?q=Tangerang+City+Mall",
+      link: "https://share.google/MmOauklWHgAF42M0p",
     },
   ];
 
@@ -131,9 +154,11 @@ function ProfilePage() {
         {contactInfo.map((info, index) => (
           <a
             key={index}
-            href={info.link}
-            onClick={() => haptics.buttonPress()}
-            className="bg-white rounded-xl p-4 sas-shadow hover:sas-shadow-lg transition-all duration-300 flex items-center gap-4 active:scale-98"
+            onClick={() => {
+              haptics.buttonPress();
+              openUrl(info.link);
+            }}
+            className="bg-white rounded-xl p-4 sas-shadow hover:sas-shadow-lg transition-all duration-300 flex items-center gap-4 active:scale-98 cursor-pointer"
           >
             <div className="flex-shrink-0 w-12 h-12 bg-sas-light rounded-full flex items-center justify-center">
               {info.icon}
@@ -339,7 +364,7 @@ function ProfilePage() {
         <button
           onClick={async () => {
             await haptics.buttonPress();
-            window.open("https://stayatscandinavia.5mb.app/", "_blank");
+            openUrl("https://wa.me/081363222197");
           }}
           className="px-8 py-3 bg-white text-sas-red font-bold rounded-full hover:bg-sas-light transition-all transform hover:scale-105 shadow-lg"
         >
