@@ -3,6 +3,7 @@ import * as Tooltip from "@radix-ui/react-tooltip";
 import { Home, Sparkles, Mail } from "lucide-react";
 import { haptics } from "../utils/haptics";
 import { useLang } from "../context/LanguageContext";
+import { SupportedLanguage } from "../utils/i18n";
 
 interface NavItem {
   path: string;
@@ -30,7 +31,7 @@ const navItems: NavItem[] = [
 
 export default function Navbar() {
   const location = useLocation();
-  const { t } = useLang();
+  const { t, setLang, lang } = useLang();
 
   const handleNavClick = async () => {
     await haptics.navigation();
@@ -41,7 +42,23 @@ export default function Navbar() {
       {/* Top bar with app name */}
       <div className="fixed top-0 left-0 w-full bg-sas-gradient text-white shadow-lg z-50 top-nav-safe">
         <div className="max-w-4xl mx-auto flex flex-row justify-center items-center px-4 py-4 w-full">
-          <span className="text-2xl font-bold tracking-wide">Stay at Scandinavia</span>
+          <span className="text-2xl font-bold tracking-wide">
+            Stay at Scandinavia
+          </span>
+          <select
+            className="ml-4 rounded-lg border border-white/30 px-3 py-1.5 bg-white/20 text-sm text-white cursor-pointer shadow-md hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+            value={lang}
+            onClick={handleNavClick}
+            onChange={(e) => setLang(e.target.value as SupportedLanguage)}
+            aria-label="Change language"
+          >
+            <option value="en" className="text-gray-800">
+              🇬🇧 English
+            </option>
+            <option value="id" className="text-gray-800">
+              🇮🇩 Indonesia
+            </option>
+          </select>
         </div>
       </div>
 
